@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Everywhere</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="fonts/FontAwesome/font-awesome.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootsnav.css" rel="stylesheet">
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/scroll.css" rel="stylesheet">
+
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.js"
+            integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/quietflow.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+<body id="home">
+<!-- Navigation menu -->
+<nav class="navbar navbar-default bootsnav">
+    <div class="container">
+        <!-- Start Header Navigation -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" style="padding: 0;height: 100%;" href=""><img
+                    src="img/cropped-cropped-cropped-Screenshot-2023-04-13-164751-1.jpeg" class="logo" alt=""></a>
+        </div>
+        <!-- End Header Navigation -->
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="nav navbar-nav navbar-center">
+                <li><a href="#" style="color: black">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="careers.html">Careers</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</nav>
+
+<div class="scroller-container">
+    <section id="background-0" class="background">
+        <div class="content-wrapper">
+            <p class="content-title">AI</p>
+            <p class="content-title">Everywhere</p>
+            <p class="content-subtitle"></p>
+        </div>
+    </section>
+    <section id="background-1" class="background">
+        <div class="content-wrapper">
+            <div class="content-title page2-left">AI =</div>
+            <div class="page2-right">
+
+                <div class="box">
+                    <div class="text-container content-title-page2 half-span">
+                        <div class="page2-label" id="label-data">Data</div>
+                    </div>
+                    <div class="box-content">
+                        <h3 class="title">We have the real-world data from every industry</h3>
+                        <!--                        <span class="post">Web designer</span>-->
+                    </div>
+                </div>
+
+                <div style="font-size: 12vh"> +</div>
+                <div class="box">
+                    <div class="text-container content-title-page2 half-span">
+                        <div class="page2-label" id="label-algorithm">Algorithm</div>
+                    </div>
+                    <div class="box-content">
+                        <h3 class="title">We have the most cutting-edge AI algorithms from every field</h3>
+                        <!--                        <span class="post">Web designer</span>-->
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <section id="background-2" class="background">
+        <div class="content-wrapper">
+            <div class="industry-container">
+                <span id="left-arrow" class="arrow">&#8592;</span>
+                <a id="industry" class="content-title" href="tech.html" style="font-size: 6vw">Technology</a>
+                <span id="right-arrow" class="arrow">&#8594;</span>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<script src="js/scripts.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js'></script>
+<script src="js/bootsnav.js"></script>
+<script>
+    var ticking = false;
+    var isFirefox = /Firefox/i.test(navigator.userAgent);
+    var isIe = /MSIE/i.test(navigator.userAgent) || /Trident.*rv\:11\./i.test(navigator.userAgent);
+    var scrollSensitivitySetting = 30;
+    var slideDurationSetting = 800;
+    var currentSlideNumber = 0;
+    var totalSlideNumber = $('.background').length;
+
+    function parallaxScroll(evt) {
+        if (isFirefox) {
+            delta = evt.detail * -120;
+        } else if (isIe) {
+            delta = -evt.deltaY;
+        } else {
+            delta = evt.wheelDelta;
+        }
+        if (ticking != true) {
+            if (delta <= -scrollSensitivitySetting) {
+                ticking = true;
+                if (currentSlideNumber !== totalSlideNumber - 1) {
+                    currentSlideNumber++;
+                    nextItem();
+                }
+                slideDurationTimeout(slideDurationSetting);
+            }
+            if (delta >= scrollSensitivitySetting) {
+                ticking = true;
+                if (currentSlideNumber !== 0) {
+                    currentSlideNumber--;
+                }
+                previousItem();
+                slideDurationTimeout(slideDurationSetting);
+            }
+        }
+    }
+
+    function slideDurationTimeout(slideDuration) {
+        setTimeout(function () {
+            ticking = false;
+        }, slideDuration);
+    }
+
+    var mousewheelEvent = isFirefox ? 'DOMMouseScroll' : 'wheel';
+    window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), false);
+
+    function nextItem() {
+        var $previousSlide = $('.background').eq(currentSlideNumber - 1);
+        $previousSlide.css('transform', 'translate3d(0,-130vh,0)').find('.content-wrapper').css('transform', 'translateY(40vh)');
+        currentSlideTransition();
+    }
+
+    function previousItem() {
+        var $previousSlide = $('.background').eq(currentSlideNumber + 1);
+        $previousSlide.css('transform', 'translate3d(0,30vh,0)').find('.content-wrapper').css('transform', 'translateY(30vh)');
+        currentSlideTransition();
+    }
+
+    function currentSlideTransition() {
+        var $currentSlide = $('.background').eq(currentSlideNumber);
+        $currentSlide.css('transform', 'translate3d(0,-15vh,0)').find('.content-wrapper').css('transform', 'translateY(15vh)');
+        ;
+    }
+</script>
+</body>
+</html>

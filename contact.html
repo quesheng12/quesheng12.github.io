@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact-us</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="fonts/FontAwesome/font-awesome.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootsnav.css" rel="stylesheet">
+    <link href="css/reset.css" rel="stylesheet">
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.js"
+            integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+            crossorigin="anonymous"></script>
+    <link href="css/carousel.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding-bottom: 1rem;
+        }
+
+        nav ul li {
+            margin: 0 0.5rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+
+        nav ul li a:hover {
+            background: #555;
+            border-radius: 5px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-main {
+            background-image: url('https://via.placeholder.com/1920x1080');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 3rem 0;
+        }
+
+        .contact-container {
+            background: rgba(255, 255, 255, 0.9);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            border-radius: 5px;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            /*color: #333;*/
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 1rem;
+        }
+
+        input,
+        textarea {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #333;
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #555;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+
+    </style>
+</head>
+<body style="overflow: auto">
+<!-- Navigation menu -->
+<nav class="navbar navbar-default bootsnav">
+    <div class="container">
+        <!-- Start Header Navigation -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" style="padding: 0;height: 100%;" href=""><img
+                    src="img/cropped-cropped-cropped-Screenshot-2023-04-13-164751-1.jpeg" class="logo" alt=""></a>
+        </div>
+        <!-- End Header Navigation -->
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="nav navbar-nav navbar-center">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" style="color: black">Contact Us</a></li>
+                <li><a href="careers.html">Careers</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</nav>
+
+<main class="contact-main">
+    <div class="contact-container">
+        <section>
+            <h2>Get in Touch</h2>
+            <p>We're here to help and answer any questions you may have. Feel free to reach out to us through any of the
+                following channels:</p>
+        </section>
+        <section>
+            <h2>Email</h2>
+            <p><a href="mailto:info@companyname.com">info@companyname.com</a></p>
+        </section>
+        <section>
+            <h2>Address</h2>
+            <p>123 Main Street<br>City, State 12345</p>
+        </section>
+        <section>
+            <h2>Follow Us</h2>
+            <p>
+                <a href="https://www.linkedin.com/company/companyname" target="_blank">LinkedIn</a><br>
+                <a href="https://www.instagram.com/companyname" target="_blank">Instagram</a><br>
+                <a href="https://www.facebook.com/companyname" target="_blank">Facebook</a>
+            </p>
+        </section>
+        <section>
+            <h2>Contact Form</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </div>
+    <!-- /.container -->
+</main>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootsnav.js"></script>
+</body>
+</html>

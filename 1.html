@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Contact Us | Company Name</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding-bottom: 1rem;
+        }
+
+        nav ul li {
+            margin: 0 0.5rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+
+        nav ul li a:hover {
+            background: #555;
+            border-radius: 5px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-main {
+            background-image: url('https://via.placeholder.com/1920x1080');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 3rem 0;
+        }
+
+        .contact-container {
+            background: rgba(255, 255, 255, 0.9);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            border-radius: 5px;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 1rem;
+        }
+
+        input,
+        textarea {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #333;
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #555;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <h1>Contact Us</h1>
+</header>
+<main class="contact-main">
+    <div class="contact-container">
+        <section>
+            <h2>Get in Touch</h2>
+            <p>We're here to help and answer any questions you may have. Feel free to reach out to us through any of the
+                following channels:</p>
+        </section>
+        <section>
+            <h2>Email</h2>
+            <p><a href="mailto:info@companyname.com">info@companyname.com</a></p>
+        </section>
+        <section>
+            <h2>Address</h2>
+            <p>123 Main Street<br>City, State 12345</p>
+        </section>
+        <section>
+            <h2>Follow Us</h2>
+            <p>
+                <a href="https://www.linkedin.com/company/companyname" target="_blank">LinkedIn</a><br>
+                <a href="https://www.instagram.com/companyname" target="_blank">Instagram</a><br>
+                <a href="https://www.facebook.com/companyname" target="_blank">Facebook</a>
+            </p>
+        </section>
+        <section>
+            <h2>Contact Form</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </div>
+</main>
+<footer>
+    <p>&copy; 2023 Company Name. All rights reserved.</p>
+</footer>
+</body>
+</html>
