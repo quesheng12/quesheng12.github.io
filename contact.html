@@ -135,7 +135,7 @@
 
     </style>
 </head>
-<body style="overflow: auto">
+<body>
 <!-- Navigation menu -->
 <nav class="navbar navbar-default bootsnav">
     <div class="container">
@@ -206,5 +206,10 @@
 
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootsnav.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#body").css("overflow", "overlay !important");
+    });
+</script>
 </body>
 </html>

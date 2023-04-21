@@ -146,6 +146,7 @@
 
     var mousewheelEvent = isFirefox ? 'DOMMouseScroll' : 'wheel';
     window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), false);
+    window.addEventListener("touchmove", _.throttle(parallaxScroll, 60), false)
 
     function nextItem() {
         var $previousSlide = $('.background').eq(currentSlideNumber - 1);
