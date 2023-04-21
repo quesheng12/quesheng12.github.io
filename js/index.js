@@ -3,8 +3,8 @@ $(document).ready(function () {
 
     $("#background-2").quietflow({
         theme: "simpleGradient",
-        primary: "#BFCCB5",
-        accent: "#7C96AB"
+        primary: "#0A4D68",
+        accent: "#05BFDB"
     })
 
     $("#background-0").quietflow({

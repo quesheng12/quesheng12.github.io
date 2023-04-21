@@ -4,15 +4,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const industryElement = document.getElementById("industry");
     const industries = ["Technology", "Health", "Finance"];
     const industryPages = [
-        "tech.html",
-        "health.html",
-        "finance.html",
+        // "tech.html",
+        // "health.html",
+        // "finance.html",
     ];
     let currentIndex = 0;
 
     function updateIndustry() {
         industryElement.textContent = industries[currentIndex];
-        industryElement.setAttribute("href", industryPages[currentIndex]);
+        industryElement.setAttribute("href", "#");
     }
 
     leftArrow.addEventListener("click", () => {
